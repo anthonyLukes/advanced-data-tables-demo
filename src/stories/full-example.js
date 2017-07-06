@@ -91,7 +91,7 @@ const generateItemsWithChangedColumn = ({ cols, changedCol, items }) => {
  * @return {Node}
  */
 const itemRenderer = (item, columnKey) => (
-  <div style={{ padding: '10px', whiteSpace: 'pre' }}>
+  <div style={{ padding: '10px' }}>
     {item[columnKey]}
   </div>
 )
@@ -209,6 +209,7 @@ const Wrapper = React.createClass({
     ]
     this.resetColumnCache = index
     if (e.target.name === 'dynamicHeight') {
+      console.log('here yo!');
       // if the column's dynamicHeight setting was changed, we need to
       // recalculate all row heights, which is the same as recalculating
       // everything
