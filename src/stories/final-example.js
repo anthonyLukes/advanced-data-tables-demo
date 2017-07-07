@@ -82,6 +82,15 @@ storiesOf('Table', module)
             <Column
                 keyName="role"
                 header="Role" />
+            <Column
+                keyName="nationality"
+                header="Nationality" />
+            <Column
+                keyName="age"
+                header="Age" />
+            <Column
+                keyName=":-)"
+                header=":-)" />
         </Table>
     )
   )
