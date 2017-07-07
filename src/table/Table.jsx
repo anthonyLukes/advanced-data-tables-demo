@@ -27,9 +27,17 @@ export default class Table extends Component {
         let children = this.props.children;
         let cols = [];
         React.Children.forEach(children, function(child, i) {
+            let props = child.props;
             if (child && child.type) {
                 if (child.type.name === 'Column') {
-                    cols.push({ key: child.props.keyName, label: child.props.header, renderer: child.props.children });
+                    cols.push({
+                        key: props.keyName,
+                        width: props.width,
+                        label: props.header,
+                        renderer: props.children,
+                        flexGrow: props.flexGrow,
+                        isResizable: props.isResizable
+                    });
                 }
             }
         });

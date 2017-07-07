@@ -65,6 +65,9 @@ storiesOf('Table', module)
     .add('Final Example', () => (
         <Table rows={rows}>
             <Column
+                isResizable
+                flexGrow={0}
+                width={150}
                 keyName="name"
                 header="Name">
                     {(row) => (
