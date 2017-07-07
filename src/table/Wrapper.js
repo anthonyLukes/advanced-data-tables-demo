@@ -1,84 +1,5 @@
 import React, { PropTypes } from 'react'
 
-const columns = [{
-    key: 'name',
-    label: 'Name',
-},{
-    key: 'role',
-    label: 'Role',
-    dynamicHeight: true,
-    dynamicWidth: true,
-    isFixed: false,
-    isResizable: true
-},{
-    key: 'nationality',
-    label: 'Nationality',
-},{
-    key: 'age',
-    label: 'Age',
-    align: 'right',
-},{
-    key: ':-)',
-    label: ':-)',
-    align: 'center',
-}];
-
-const rows = [{
-    name: <div>Rochelle Graham</div>,
-    role: 'Team lead',
-    nationality: 'American',
-    age: 12,
-    ':-)': '🏄🏾',
-},{
-    name: 'Byron  Lowe',
-    role: 'UX Designer',
-    nationality: 'French',
-    age: 11,
-    ':-)': '🐶',
-},{
-    name: 'Mildred    Lindsey',
-    role: 'Developer',
-    nationality: 'Finnish',
-    age: 14,
-    ':-)': '🍹',
-},{
-    name: 'Tabitha    Horton',
-    role: 'Developer',
-    nationality: 'Australian',
-    age: 12,
-    ':-)': '🤘🏻',
-},{
-    name: 'Stephen    Hayes',
-    role: 'UI Designer',
-    nationality: 'German',
-    age: 10,
-    ':-)': '🏋',
-},{
-    name: 'Kerry  Long',
-    role: 'Developer',
-    nationality: 'Portuguese',
-    age: 9,
-    ':-)': '🏋🏾',
-},{
-    name: 'Bill   Green',
-    role: 'Developer',
-    nationality: 'Italian',
-    age: 11,
-    ':-)': '🏀',
-},{
-    name: 'Courtney   Wilson',
-    role: 'Developer',
-    nationality: 'Polish',
-    age: 4,
-    ':-)': '🗺',
-},{
-    name: 'Heather    Wilkerson',
-    role: 'Developer',
-    nationality: 'Romanian',
-    age: 7,
-    ':-)': '☕️',
-}];
-
 /**
  * This function gets called for every cell in the table (for every row and
  * column combination). Its return value will be rendered as the cell inside the
@@ -112,9 +33,9 @@ const Wrapper = React.createClass({
 
     return {
       numberOfRows: items.length,
-      maxHeight: 500,
+      maxHeight: this.props.maxHeight || 500,
       cols,
-      width: null,
+      width: this.props.width || null,
       items,
       sortedItems: items,
     }
@@ -234,7 +155,7 @@ const Wrapper = React.createClass({
       .reduce((acc, col) => acc + col.width, 0)
     this.setState({
       cols: Object.values(newCols),
-      width: totalWidth,
+      // width: totalWidth,
     })
   },
   onSortChange (columnKey, sortDir) {

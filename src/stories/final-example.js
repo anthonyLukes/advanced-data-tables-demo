@@ -63,7 +63,10 @@ const rows = [{
 
 storiesOf('Table', module)
     .add('Final Example', () => (
-        <Table rows={rows}>
+        <Table
+            rows={rows}
+            maxHeight={300}
+            width={500}>
             <Column
                 isResizable
                 flexGrow={0}

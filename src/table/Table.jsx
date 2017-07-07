@@ -72,7 +72,11 @@ export default class Table extends Component {
         let cols = this.getColumns();
         let rows = this.getRows(cols);
         return (
-            <Wrapper columns={cols} rows={rows}>
+            <Wrapper
+                columns={cols}
+                rows={rows}
+                width={this.props.width}
+                maxHeight={this.props.maxHeight}>
                 {(props) => {
                   const {
                     numberOfRows, maxHeight, cols, items, onSortChange, sortKey,
