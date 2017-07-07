@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
-import Table from '../table/Table';
+import Table from '../table/TableComponent';
 
 const itemRenderer = (item, key) => (
   <div style={{ padding: '10px' }}>

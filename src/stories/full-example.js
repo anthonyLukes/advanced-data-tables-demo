@@ -12,7 +12,7 @@ import {
   Row,
   Col,
 } from 'elemental'
-import Table from '../table/Table';
+import Table from '../table/TableComponent';
 import '../styles.min.css';
 
 /**
@@ -91,7 +91,7 @@ const generateItemsWithChangedColumn = ({ cols, changedCol, items }) => {
  * @return {Node}
  */
 const itemRenderer = (item, columnKey) => (
-  <div style={{ padding: '10px' }}>
+  <div style={{ padding: '10px', whiteSpace: 'pre' }}>
     {item[columnKey]}
   </div>
 )
